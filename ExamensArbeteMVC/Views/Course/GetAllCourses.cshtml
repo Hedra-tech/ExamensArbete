@@ -1,0 +1,37 @@
+﻿@model IEnumerable<ExamensArbeteMVC.Models.CourseModel>
+
+@{
+    Layout = "_Layout"; 
+}
+<div class ="container">
+    <h4>Here you can check our courses:</h4></div>
+
+    <div class ="row">
+        @foreach (var course in Model)
+        {
+  <div class=" col-md-3 ">
+  <div class="card mb-4 shadow">
+  
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">@course.Title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Teacher: @course.Teacher</li>
+    <li class="list-group-item">Price: @course.price</li>
+    <li class="list-group-item">Start date: @course.startDate</li>
+  </ul>
+  <div class="card-body">
+    <a href="/Course/GetCourseById/@course.Id" class="card-link">Course details</a>
+   @* <a href="#" class="card-link">Another link</a>*@
+  </div>
+
+  </div>
+ 
+</div>
+        }
+       </div>
+
+
+
