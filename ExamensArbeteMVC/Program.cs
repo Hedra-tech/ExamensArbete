@@ -18,6 +18,10 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapDefaultControllerRoute();
+});
 
 app.UseAuthorization();
 // I will use MapControllerRoute to add this endpoints controller like default route for home and index

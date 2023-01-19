@@ -1,14 +1,17 @@
-﻿@using ExamensArbeteMVC.Models;
-@model CourseModel
+﻿@*@using ExamensArbeteMVC.Models;*@
+@*@model CourseModel*@
 @*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
+    Layout = "_Layout";
 }
 <div class ="container">
+    <h3>Courses Details:</h3>
+   
     <div class ="row">
        @* first colun to the left*@
-        <div class ="col-md-6">
+        <div class ="col-md-4">
             <div id="carouselExampleIndicators" class="carousel slide">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -38,10 +41,10 @@
         </div>
         @* second colun to the right*@
           <div class ="col-md-6">
- <div class ="row">
+ 
       
-  <div class=" col-md-3 ">
-  <div class="card mb-4 shadow">
+ 
+  <div class="card mb-6 shadow">
   
   <img src="..." class="card-img-top" alt="...">
   <div class="card-body">
@@ -53,16 +56,41 @@
     <li class="list-group-item">Price: @Model.price</li>
     <li class="list-group-item">Start date: @Model.startDate</li>
   </ul>
+ 
+
+  </div>
+</div>
+<br />
+
+@* <hr />*@
+<div class ="py-5 bg-light">
+    <h3> Other Courses</h3>
+    <div class ="row">
+        @for (int i = 0; i<3; i++){
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title">Course.Title</h3>
+                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  
+                    <ul class="list-group list-group-flush">
+    <li class="list-group-item">Teacher: course.Teacher</li>
+    <li class="list-group-item">Price: course.price</li>
+    <li class="list-group-item">Start date: course.startDate</li>
+  </ul>
   <div class="card-body">
-    <a href="/Course/GetCourseById/@Model.Id" class="card-link">Course details</a>
+    <a href="/Course/GetCourseById/course.Id" class="card-link">Course details</a>
    @* <a href="#" class="card-link">Another link</a>*@
   </div>
 
-  </div>
- 
-</div>
-        }
-       </div>
+
+
+                </div>
+            </div>
         </div>
+        }
+    </div>
+</div>
+
     </div>
 </div>

@@ -1,6 +1,7 @@
 ﻿using ExamensArbeteMVC.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Http;
 
 namespace ExamensArbeteMVC.Controllers
 {
@@ -24,6 +25,15 @@ namespace ExamensArbeteMVC.Controllers
         }
        
         public IActionResult ContactUs()
+        {
+            return View();
+        }
+        public ViewResult ContactForm()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ViewResult ContactForm(ContactFormModel contactFormModel)
         {
             return View();
         }

@@ -28,5 +28,6 @@ namespace ExamensArbeteMVC.Controllers
         {
             return _courseData.SearchCourses(title);
         }
+      
     }
 }

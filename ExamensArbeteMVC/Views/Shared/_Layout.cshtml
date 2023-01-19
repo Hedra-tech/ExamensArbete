@@ -19,7 +19,8 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <a class="navbar-brand" href="/">
-                    <img class="logo" src="~/Images/linkedin.png" width="20" height="20" />
+                     @*   I use asp-append-version to bring the image from server and not from memory cash*@
+                    <img class="logo" src="~/Images/linkedin.png" width="20" height="20" asp-append-version ="true" />
                     HED courses
                 </a>
                  <div class="collapse navbar-collapse  @*d-sm-inline-flex*@  flex-sm-row-reverse  ">
