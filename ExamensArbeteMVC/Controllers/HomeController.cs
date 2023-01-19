@@ -28,15 +28,7 @@ namespace ExamensArbeteMVC.Controllers
         {
             return View();
         }
-        public ViewResult ContactForm()
-        {
-            return View();
-        }
-        [HttpPost]
-        public ViewResult ContactForm(ContactFormModel contactFormModel)
-        {
-            return View();
-        }
+       
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
