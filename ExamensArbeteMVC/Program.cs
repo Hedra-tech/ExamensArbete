@@ -1,7 +1,11 @@
+using ExamensArbeteMVC.DataDB;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<StoreContext>(option => option.UseSqlServer(("server = .; Database= Store ; Integrated security=True; TrustServerCertificate=True")));
 
 
 var app = builder.Build();
