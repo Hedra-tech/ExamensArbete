@@ -21,7 +21,7 @@ namespace ExamensArbeteMVC.Controllers
         public async Task<IActionResult> ContactForm(ContactFormModel contactFormModel)
         {
             //when the id is bigger than 0, then it will redirect us to the form
-           int id = await _courseData.ContactForm(contactFormModel);
+            int id = await _courseData.ContactForm(contactFormModel);
             if (id > 0)
             {
                 return RedirectToAction(nameof(ContactForm), new { isSuccess = true });

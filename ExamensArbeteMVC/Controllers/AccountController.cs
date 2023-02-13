@@ -48,7 +48,7 @@ namespace ExamensArbeteMVC.Controllers
         }
         [Route("login")]
         [HttpPost]
-        public async Task <IActionResult>  LogIn(LogInModel loginModel)
+        public async Task<IActionResult> LogIn(LogInModel loginModel)
         {
             if (ModelState.IsValid)
             {

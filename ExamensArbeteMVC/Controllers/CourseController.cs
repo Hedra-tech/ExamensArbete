@@ -9,13 +9,28 @@ namespace ExamensArbeteMVC.Controllers
 
 
         private readonly CourseData _courseData = null;
+
+        public CourseController(CourseData courseData)
         {
-        }
-        {
+            _courseData = courseData;
         }
 
+        [Route("all-courses")]
+        public async Task<ViewResult> GetAllCourses()
         {
+            var data = await _courseData.GetAllCourses();
+            return View(data);
         }
+
+        public async Task<ViewResult> GetCourseById(int id)
+        {
+            var data = _courseData.GetCourseById(id);
+            return View(data);
+        }
+
+
+
+
 
 
     }
