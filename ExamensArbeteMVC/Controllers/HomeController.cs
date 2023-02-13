@@ -7,7 +7,12 @@ namespace ExamensArbeteMVC.Controllers
 {
     public class HomeController : Controller
     {
-        
+        private readonly ILogger<HomeController> _logger;
+
+        public HomeController(ILogger<HomeController> logger)
+        {
+            _logger = logger;
+        }
 
         public IActionResult Index()
         {
@@ -18,10 +23,8 @@ namespace ExamensArbeteMVC.Controllers
         {
             return View();
         }
-       
-        public IActionResult ContactUs()
+
         {
-            return View();
         }
     }
 }
