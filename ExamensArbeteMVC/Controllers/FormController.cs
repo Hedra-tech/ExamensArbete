@@ -1,18 +1,34 @@
 ﻿using ExamensArbeteMVC.Models;
+using ExamensArbeteMVC.RepositoryData;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ExamensArbeteMVC.Controllers
 {
     public class FormController : Controller
     {
-        public ViewResult ContactForm()
+        private readonly FormData _courseData = null;
+        public FormController(FormData courseData)
         {
+            _courseData = courseData;
+        }
+        public ViewResult ContactForm(bool isSuccess = false)
+        {
+            ViewBag.IsSuccess = isSuccess;
             return View();
         }
         [HttpPost]
-        public ViewResult ContactForm (ContactFormModel contactFormModel)
+        //I use IactionResult to return any type of return method
+        public async Task<IActionResult> ContactForm(ContactFormModel contactFormModel)
         {
+            //when the id is bigger than 0, then it will redirect us to the form
+           int id = await _courseData.ContactForm(contactFormModel);
+            if (id > 0)
+            {
+                return RedirectToAction(nameof(ContactForm), new { isSuccess = true });
+            }
             return View();
+
         }
+
     }
 }

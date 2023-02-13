@@ -1,33 +1,38 @@
-﻿using ExamensArbeteMVC.Data;
+﻿
 using ExamensArbeteMVC.Models;
+using ExamensArbeteMVC.RepositoryData;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ExamensArbeteMVC.Controllers
 {
     public class CourseController : Controller
     {
+
+
         private readonly CourseData _courseData = null;
-            public CourseController()
+    
+        public CourseController(CourseData courseData)
         {
-            _courseData = new CourseData();
+            _courseData = courseData;
         }
-        public ViewResult GetAllCourses()
+
+        [Route("all-courses")]
+        public async Task<ViewResult> GetAllCourses()
         {
-            var data = _courseData.GetAllCourses();
+            var data = await _courseData.GetAllCourses();
             return View(data);
         }
 
-        public ViewResult GetCourseById(int id)
+        public async Task<ViewResult> GetCourseById(int id)
         {
             var data = _courseData.GetCourseById(id);
             return View(data);
         }
 
 
-        public CourseModel SearchCourses (string title)
-        {
-            return _courseData.SearchCourses(title);
-        }
       
+
+
+
     }
 }

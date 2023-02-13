@@ -1,6 +1,6 @@
-﻿namespace ExamensArbeteMVC.Models
+﻿namespace ExamensArbeteMVC.DBcontext
 {
-    public class CourseModel
+    public class CourseDTO
     {
         public int Id { get; set; }
         public string? Title { get; set; }
@@ -9,6 +9,5 @@
         public string? price { get; set; }
         public string? startDate { get; set; }
         public string ImagesPath { get; set; }
-
     }
 }

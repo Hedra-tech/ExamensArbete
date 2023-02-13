@@ -1,0 +1,38 @@
+﻿@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> _signinManager
+
+@{
+    var user = _signinManager.IsSignedIn(User);
+}
+@if (user)
+{
+  
+<li class="nav-item">
+    <a class="btn btn-outline-primary" asp-controller="Account" asp-action="login">Login</a>
+    <a class="btn btn-primary" asp-controller="Account" asp-action="SignUp">Register</a>
+</li>  
+}
+
+@*{
+ <li class="nav-item">
+         <div>
+            Hello @((User.Identity?.Name))
+      
+       
+            <a class="btn btn-secondary" asp-action="LogOut"  asp-controller="Account">Logout</a>
+        </div>
+    </li>
+    }*@
+
+else
+{
+    <p>hello</p>
+}
+@*{
+  
+<li class="nav-item">
+    <a class="btn btn-outline-primary" asp-controller="Account" asp-action="login">Login</a>
+    <a class="btn btn-primary" asp-controller="Account" asp-action="SignUp">Register</a>
+</li>  
+}*@

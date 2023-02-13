@@ -1,38 +1,86 @@
-﻿@*@model IEnumerable<ExamensArbeteMVC.Models.CourseModel>
-
-@{
-    Layout = "_Layout"; 
-}*@
-<div class ="container">
+﻿
+    <div class ="container">
     <h4>Here you can check our courses:</h4></div>
 
     <div class ="row">
-        @foreach (var course in Model)
-        {
-  <div class=" col-md-3 ">
-  <div class="card mb-4 shadow">
-  
-  <img class="card-img-top"  >
+    @foreach (var course in Model)
+    {
+    <div class=" col-md-3 ">
+    <div class="card mb-4 shadow">
 
-  <div class="card-body">
+    <img class="card-img-top" src=" " asp-for= "Images"  >
+
+    <div class="card-body">
     <h5 class="card-title">@course.Title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-  <ul class="list-group list-group-flush">
+    </div>
+    <ul class="list-group list-group-flush">
     <li class="list-group-item">Teacher: @course.Teacher</li>
     <li class="list-group-item">Price: @course.price</li>
     <li class="list-group-item">Start date: @course.startDate</li>
-  </ul>
-  <div class="card-body">
+    </ul>
+    <div class="card-body">
     <a href="/Course/GetCourseById/@course.Id" class="card-link">Course details</a>
-   @* <a href="#" class="card-link">Another link</a>*@
-  </div>
+    </div>
 
-  </div>
- 
-</div>
-        }
-       </div>
+    </div>
 
+    </div>
+    }
+    </div>
 
 
+
+
+@*
+
+<div class="container">
+    <h4>Here you can check our courses:</h4>
+
+    <div class="row">
+
+        <div class=" col-md-3 ">
+            <div class="card mb-4 shadow">
+
+                <img class="card-img-top img-responsive" title="Click" style="cursor:pointer" src="~/Images/Courses/Course1.jpg">
+
+                <div class="card-body">
+                    <h5 class="card-title">Python for beginners</h5>
+                    <p class="card-text">Learn programming from scratch</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Teacher: Anna Peterson</li>
+                    <li class="list-group-item">Price: $14.99</li>
+                    <li class="list-group-item">Start date: 2023-05-01</li>
+                </ul>
+                <div class="card-body">
+                    <a href="/Course/GetCourseById/Id" class="card-link">Course details</a>
+                </div>
+                <div class="product-item-badge">Discount</div>
+            </div>
+        </div>
+
+        <div class=" col-md-3 ">
+            <div class="card mb-4 shadow">
+
+                <img class="card-img-top">
+
+                <div class="card-body">
+                    <h5 class="card-title">Title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Teacher: Teacher</li>
+                    <li class="list-group-item">Price: price</li>
+                    <li class="list-group-item">Start date: .startDate</li>
+                </ul>
+                <div class="card-body">
+                    <a href="/Course/GetCourseById/Id" class="card-link">Course details</a>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>*@

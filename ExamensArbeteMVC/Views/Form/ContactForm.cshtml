@@ -9,34 +9,48 @@
 
 <div class="container">
     <h1>Contact us:</h1>
-    <h6>Would you like to know more about how it works with booking our courses, the costs and more about proceed? <br />
-Write to us via the form and we will contact you shortly.</h6>
-<div class="card  shadow">
-     <div class="card-body">
-
-<form method="post" asp-action= "ContactForm" asp-controller="Form">
-   
-    <label asp-for="Name">Your Name:</label>
-    <input asp-for="Name" class="form-control"  />
-
-     <label asp-for="AfterName">AfterName:</label>
-    <input asp-for="AfterName" class="form-control" />
-
-     <label asp-for="Adress">Adress:</label>
-    <input asp-for="Adress" class="form-control" />
-
-     <label asp-for="Email">Email:</label>
-    <input asp-for="Email" class="form-control"/>
-
-     <label asp-for="Message">Message:</label>
-    <textarea asp-for="Message" class="form-control"> </textarea>
-     <br />
-  <button type="submit" class="btn btn-primary" value="Contact us">Submit</button>
-     
-</form>
-
+    <h6>
+        Would you like to know more about how it works with booking our courses, the costs and more about proceed? <br />
+        Write to us via the form and we will contact you shortly.
+    </h6>
+    <div class="card  shadow">
+        <div class="card-body">
+            @if (ViewBag.IsSuccess)
+            {
+                <div class="alert alert-success" role="alert">
+  <h4 class="alert-heading">Thank you!</h4>
+  <p>We are thrilled to hear from you. We are processing your request and will return your contact as soon as possible....</p>
+  <hr>
+  <p class="mb-0"> We are very happy to have you with us. We hope you find a useful course.</p>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
 </div>
+            }
 
-</div>
+            <form method="post" asp-action="ContactForm" asp-controller="Form">
+
+                <label asp-for="Name">Your Name:</label>
+                <input asp-for="Name" class="form-control" />
+
+                <label asp-for="AfterName">Last Name:</label>
+                <input asp-for="AfterName" class="form-control" />
+
+                <label asp-for="Adress">Adress:</label>
+                <input asp-for="Adress" class="form-control" />
+
+                <label asp-for="Email">Email:</label>
+                <input asp-for="Email" class="form-control" />
+
+                <label asp-for="Message">Message:</label>
+                <textarea asp-for="Message" class="form-control"> </textarea>
+                <br />
+                <button type="submit" class="btn btn-primary" value="Contact us">Submit</button>
+
+            </form>
+
+        </div>
+
+    </div>
 
 </div>

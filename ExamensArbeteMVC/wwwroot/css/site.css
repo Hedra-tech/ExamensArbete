@@ -16,3 +16,17 @@ html {
 body {
   margin-bottom: 60px;
 }
+.product-item-badge{
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    padding: 5px 12px 6px;
+    color: aliceblue;
+    font-size: 12px;
+    line-hieght: 14px;
+    font-wieght: 600;
+    background: #ff0000;
+}
+.product-item-badge{
+    background: #f89406;
+}
