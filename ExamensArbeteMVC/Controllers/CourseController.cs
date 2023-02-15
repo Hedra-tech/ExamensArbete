@@ -8,9 +8,9 @@ namespace ExamensArbeteMVC.Controllers
     {
 
 
-        private readonly CourseData _courseData = null;
+        private readonly ICourseData _courseData = null;
 
-        public CourseController(CourseData courseData)
+        public CourseController(ICourseData courseData)
         {
             _courseData = courseData;
         }

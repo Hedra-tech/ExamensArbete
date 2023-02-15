@@ -15,6 +15,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped< FormData>();
 builder.Services.AddScoped<IAccountData, AccountData>();
+builder.Services.AddScoped<ICourseData, CourseData>();
 
 var app = builder.Build();
 
