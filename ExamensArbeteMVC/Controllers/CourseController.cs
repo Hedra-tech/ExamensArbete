@@ -15,16 +15,16 @@ namespace ExamensArbeteMVC.Controllers
             _courseData = courseData;
         }
 
-        [Route("all-courses")]
+        //[Route("all-courses")]
         public async Task<ViewResult> GetAllCourses()
         {
             var data = await _courseData.GetAllCourses();
             return View(data);
         }
-
+        //[Route("book-details/{id:int:min(1)}", Name = "courseDetailsRoute")]
         public async Task<ViewResult> GetCourseById(int id)
         {
-            var data = _courseData.GetCourseById(id);
+            var data =  await _courseData.GetCourseById(id);
             return View(data);
         }
 

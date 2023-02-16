@@ -15,7 +15,7 @@ namespace ExamensArbeteMVC.Data
             return DataSource().Where(x => x.Id == id).FirstOrDefault();
 
         }
-        public List<CourseModel> SearchCourses (string title, string teacherName)
+        public List<CourseModel> SearchCourses(string title, string teacherName)
         {
             return DataSource().Where(x => x.Title.Contains(title) && x.Teacher.Contains(teacherName)).ToList();
         }

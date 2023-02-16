@@ -20,7 +20,8 @@
     <li class="list-group-item">Start date: @course.startDate</li>
     </ul>
     <div class="card-body">
-    <a href="/Course/GetCourseById/@course.Id" class="card-link">Course details</a>
+         <a class="card-link" asp-area="" asp-controller="Course" asp-action="GetCourseById">Courses details</a>
+   @* <a href="/Course/GetCourseById/@course.Id" class="card-link">Course details</a>*@
     </div>
 
     </div>

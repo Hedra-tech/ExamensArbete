@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ExamensArbeteMVC.DBcontext;
+
 
 namespace ExamensArbeteMVC.RepositoryData
 {
@@ -30,26 +30,26 @@ namespace ExamensArbeteMVC.RepositoryData
                     ImagesPath = c.ImagesPath
                 }).ToListAsync();
         }
-       
-        public async Task<List<CourseModel>> GetCourseById(int id)
+
+        public async Task<CourseModel> GetCourseById(int id)
         {
-            return await _context.Courses.Select(c => new CourseModel()
-            {
-                Title = c.Title,
-                description = c.description,
-                Teacher = c.Teacher,
-                price = c.price,
-                startDate = c.startDate,
-                ImagesPath = c.ImagesPath
-            }).Take(id).ToListAsync();
-
+            return await _context.Courses
+                .Where(X => X.Id == id)
+                .FirstOrDefault();
+        
         }
-
-
-
-
-
-
-
     }
 }
+
+
+//return await _context.Courses
+//    .Where(x => x.Id == id)
+//    .Select(c => new CourseModel()
+//{
+//    Title = c.Title,
+//    description = c.description,
+//    Teacher = c.Teacher,
+//    price = c.price,
+//    startDate = c.startDate,
+//    ImagesPath = c.ImagesPath
+//}).FirstOrDefaultAsync();
