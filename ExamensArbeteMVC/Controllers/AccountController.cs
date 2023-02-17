@@ -1,5 +1,6 @@
 ﻿using ExamensArbeteMVC.Models;
 using ExamensArbeteMVC.RepositoryData;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 
@@ -9,9 +10,12 @@ namespace ExamensArbeteMVC.Controllers
     public class AccountController : Controller
     {
         private readonly IAccountData _accountData;
-        public AccountController(IAccountData accountData)
+
+        public readonly SignInManager<IdentityUser> SignInManager;
+        public AccountController(IAccountData accountData, SignInManager<IdentityUser> signInManager)
         {
             _accountData = accountData;
+            SignInManager = signInManager;
         }
         [Route("signup")]
         public IActionResult SignUp()
@@ -55,7 +59,7 @@ namespace ExamensArbeteMVC.Controllers
                 var result = await _accountData.PasswordSignInAsync(loginModel);
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("AboutUs", "Home");
                 }
                 ModelState.AddModelError("", "Invalid input");
             }

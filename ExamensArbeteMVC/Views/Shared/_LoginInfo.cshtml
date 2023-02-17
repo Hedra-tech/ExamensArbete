@@ -5,24 +5,31 @@
 @{
     var user = _signinManager.IsSignedIn(User);
 }
-@if (!_signinManager.IsSignedIn(User))
+@if (user)
 {
-  
-<li class="nav-item">
-    <a class="btn btn-outline-primary" asp-controller="Account" asp-action="login">Login</a>
-    <a class="btn btn-primary" asp-controller="Account" asp-action="SignUp">Register</a>
-    </li>
-}
-else
-
-{
-
- <li class="nav-item">
+  <li class="nav-item">
          <div>
             Hello @((User.Identity?.Name))
       
        
             <a class="btn btn-secondary" asp-action="LogOut"  asp-controller="Account">Logout</a>
         </div>
+    </li> 
+
+}
+else
+
+{
+
+    <li class="nav-item">
+    <a class="btn btn-outline-primary" asp-controller="Account" asp-action="login">Login</a>
+    <a class="btn btn-primary" asp-controller="Account" asp-action="SignUp">Register</a>
     </li>
+
     }
+
+
+
+
+
+  @*  @if (!_signinManager.IsSignedIn(User))*@

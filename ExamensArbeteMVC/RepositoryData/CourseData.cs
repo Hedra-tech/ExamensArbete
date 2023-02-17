@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+using ExamensArbeteMVC.DBcontext;
 
 namespace ExamensArbeteMVC.RepositoryData
 {
@@ -34,22 +34,61 @@ namespace ExamensArbeteMVC.RepositoryData
         public async Task<CourseModel> GetCourseById(int id)
         {
             return await _context.Courses
-                .Where(X => X.Id == id)
-                .FirstOrDefault();
-        
+                .Where(x => x.Id == id)
+                .Select(c => new CourseModel()
+            {
+                Title = c.Title,
+                description = c.description,
+                Teacher = c.Teacher,
+                price = c.price,
+                startDate = c.startDate,
+                ImagesPath = c.ImagesPath
+            }).FirstOrDefaultAsync();
         }
+
+
+        // return await _context.Courses
+        //        .Where(x => x.Id == id)
+        //        .Select(c => new CourseModel()
+        //{
+        //    Title = c.Title,
+        //        description = c.description,
+        //        Teacher = c.Teacher,
+        //        price = c.price,
+        //        startDate = c.startDate,
+        //        ImagesPath = c.ImagesPath
+        //    })
+
+
+
+
+
+
+
+        //public async Task<CourseModel> GetCourseById(int id)
+        //{
+        //    var c = await _context.Courses.FindAsync(id);
+        //    if (c != null)
+        //    {
+        //        var courseDetails = new CourseModel()
+        //        {
+        //            Title = c.Title,
+        //            description = c.description,
+        //            Teacher = c.Teacher,
+        //            price = c.price,
+        //            startDate = c.startDate,
+        //            ImagesPath = c.ImagesPath
+        //        };
+        //        return courseDetails;
+
+        //    }
+        //    return null;
+
+        //}
+
+
+
+
+
     }
 }
-
-
-//return await _context.Courses
-//    .Where(x => x.Id == id)
-//    .Select(c => new CourseModel()
-//{
-//    Title = c.Title,
-//    description = c.description,
-//    Teacher = c.Teacher,
-//    price = c.price,
-//    startDate = c.startDate,
-//    ImagesPath = c.ImagesPath
-//}).FirstOrDefaultAsync();

@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using ExamensArbeteMVC.DBcontext;
+using ExamensArbeteMVC.Models;
 
 namespace ExamensArbeteMVC.DBcontext
 {

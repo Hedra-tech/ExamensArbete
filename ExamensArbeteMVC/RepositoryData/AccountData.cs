@@ -5,12 +5,12 @@ namespace ExamensArbeteMVC.RepositoryData
 {
     public class AccountData : IAccountData
     {
-        private readonly UserManager<IdentityUser> _UserManager;
+        private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signinManager;
 
         public AccountData(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signinManager)
         {
-            _UserManager = userManager;
+            _userManager = userManager;
             _signinManager = signinManager;
 
         }
@@ -21,13 +21,14 @@ namespace ExamensArbeteMVC.RepositoryData
                 Email = userModel.Email,
                 UserName = userModel.Email
             };
-            var result = await _UserManager.CreateAsync(user, userModel.Password);
+            var result = await _userManager.CreateAsync(user, userModel.Password);
             return result;
         }
         public async Task<SignInResult> PasswordSignInAsync(LogInModel loginModel)
         {
-            var result = await _signinManager.PasswordSignInAsync(loginModel.Email, loginModel.Password, loginModel.RememberMe, false);
-            return result;
+            return await _signinManager.PasswordSignInAsync(loginModel.Email, loginModel.Password, loginModel.RememberMe, false);
+
+
         }
         public async Task SignOutAsync()
         {
