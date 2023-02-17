@@ -51,11 +51,7 @@
             @RenderBody()
         </main>
     </div>
-    < div class="container">
-    <footer class="footer border-top text-center container">
-
-        <h4>Copyright &copy; HED HUB @DateTime.Now.Year </h4>
-    </footer>
+  
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -67,4 +63,46 @@
         @await RenderSectionAsync("Scripts", required: false)
 </body>
 
+    <footer class="footer border-top  ">
+       
+        <div class = "container-fluid" style="background-color: black">
+             <div class ="row">
+            <div class = "col-md-4 " >
+                <div class="del">
+                <h1>Contact us</h1>
+                <ul class ="list-unstyled">
+                    <li>Email: hedragourieh@hotmail.com</li>
+                    <li>Mobile: 0729388315</li>
+                   <li>Orieneringsstigen, 29A</li>
+                        <li>15159 Södertälje</li>
+                </ul>
+                </div>
+            </div>
+             <div class = "col-md-4 " >
+                 <div class="del">
+                     <br />
+                    
+                        <h4 style ="color:white">Copyright &copy; HED HUB @DateTime.Now.Year </h4>
+                        <ul class ="list-unstyled">
+                        
+                          </ul>
+                          </div>
+               </div>
+                <div class = "col-md-4 " >
+                     <div class="del">
+                <h1>Menu</h1>
+                <ul class ="list-unstyled">
+                    <li> <a asp-area="" asp-controller="Home" asp-action="Index" style="color:white">Home</a></li>
+                    <li><a style="color:white" asp-area="" asp-controller="Home" asp-action="AboutUs">About us</a></li>
+                    <li><a style="color:white" asp-controller="Form" asp-action="ContactForm">Contact us</a></li>
+                    <li><a style="color:white" asp-controller="Course" asp-action="GetAllCourses">Courses</a></li>
+                   
+                </ul>
+                 </div>
+            </div>
+        </div>
+
+ </div>
+    </footer>
+   
 </html>
