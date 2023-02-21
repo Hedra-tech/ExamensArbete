@@ -3,11 +3,16 @@
 @{
     ViewData["Title"] = "SignUp";
 }
-
+<div class="container">
 <h1>SignUp</h1>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <br />
+   
+    <div class="col-6" style="padding-top: 20px">
+        
+        <div  class="card  shadow" >
+        <div class="card-body">
         <form asp-action="SignUp">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -26,24 +31,31 @@
                 <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
             </div>
             <br />
+            <br />
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
-    </div>
-    <div class ="col-md-8" style="text-align:center" >
-         <img src = "~/Images/Signup.jpg" class="img-fluid"  width="300" height="300" />
-    </div >
-    <br />
+        <br />
+          <br />
     <div>
-        <p>
+        <h6>
             Click <a asp-controller="Account" asp-action="login">here </a>if you already have an account.
-        </p>
+        </h6>
     </div>
+         </div>
+          </div>
+    </div>
+    <div class ="col-6" style="text-align:center" >
+         <img src = "~/Images/Signup.jpg" class="img-fluid"  width="450" height="450" />
+    </div >
+
+
+  
 
 </div>
 
-
+</div>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="~/ExamensArbeteMVC.styles.css" asp-append-version="true" />
 </head>
 <body>
+
     <header>
          
         <nav  class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-black border-bottom box-shadow mb-3" >
@@ -48,11 +49,11 @@
         </nav>
           
     </header>
-    <div class="container">
+    
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
-    </div>
+   
   
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
@@ -65,18 +66,18 @@
         @await RenderSectionAsync("Scripts", required: false)
 </body>
 
-    <footer class="footer border-top  ">
+    <footer >
        
-        <div class = "container-fluid" style="background-color: black">
+        <div id="footer" class ="fixed-bottom" >
              <div class ="row">
             <div class = "col-md-4 " >
                 <div class="del">
-                <h1>Contact us</h1>
+                <h4 style="color:white">Contact us</h4>
                 <ul class ="list-unstyled">
-                    <li>Email: hedragourieh@hotmail.com</li>
-                    <li>Mobile: 0729388315</li>
-                   <li>Orieneringsstigen, 29A</li>
-                        <li>15159 Södertälje</li>
+                    <li style="color:white">Email: hedragourieh@hotmail.com</li>
+                    <li style="color:white">Mobile: 0729388315</li>
+                   <li style="color:white">Orieneringsstigen, 29A</li>
+                        <li style="color:white">15159 Södertälje</li>
                 </ul>
                 </div>
             </div>
@@ -84,7 +85,7 @@
                  <div class="del">
                      <br />
                     
-                        <h4 style ="color:white">Copyright &copy; HED HUB @DateTime.Now.Year </h4>
+                        <h6 style ="color:white">Copyright &copy; HED HUB @DateTime.Now.Year </h6>
                         <ul class ="list-unstyled">
                         
                           </ul>
@@ -92,7 +93,7 @@
                </div>
                 <div class = "col-md-4 " >
                      <div class="del">
-                <h1>Menu</h1>
+                <h4 style="color:white">Menu</h4>
                 <ul class ="list-unstyled">
                     <li> <a asp-area="" asp-controller="Home" asp-action="Index" style="color:white">Home</a></li>
                     <li><a style="color:white" asp-area="" asp-controller="Home" asp-action="AboutUs">About us</a></li>
@@ -108,3 +109,4 @@
     </footer>
    
 </html>
+

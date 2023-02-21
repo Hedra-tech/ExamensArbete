@@ -9,11 +9,17 @@
 
 <div class="container">
     <h1>Contact us:</h1>
+    <hr />
     <h6>
         Would you like to know more about how it works with booking our courses, the costs and more about proceed? <br />
         Write to us via the form and we will contact you shortly.
     </h6>
-    <div class="card  shadow">
+    <br />
+    <div class ="row">
+
+        <div class ="col-6">
+
+    <div class="card  shadow" style="padding-top: 5px">
         <div class="card-body">
             @if (ViewBag.IsSuccess)
             {
@@ -30,7 +36,7 @@
 
             <form method="post" asp-action="ContactForm" asp-controller="Form">
 
-                <label asp-for="Name">Your Name:</label>
+                <label asp-for="Name">First Name:</label>
                 <input asp-for="Name" class="form-control" />
 
                 <label asp-for="AfterName">Last Name:</label>
@@ -45,7 +51,8 @@
                 <label asp-for="Message">Message:</label>
                 <textarea asp-for="Message" class="form-control"> </textarea>
                 <br />
-                <button type="submit" class="btn btn btn-danger" value="Contact us">Submit</button>
+                <br />
+                <button type="submit" class="btn btn-primary" value="Contact us">Send</button>
 
             </form>
 
@@ -53,5 +60,14 @@
 
     </div>
 
+        </div>
+
+        <div class ="col-6" style="text-align:center" >
+         <img src = "~/Images/ContactUs.jpg" class="img-fluid"  width="500" height="500" />
+    </div >
+
+    </div>
+
+
+
 </div>
-Write to Roland Samuel
