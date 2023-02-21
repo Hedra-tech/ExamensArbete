@@ -36,22 +36,19 @@ namespace ExamensArbeteMVC.RepositoryData
             
             return await _context.Courses
                 .Where(x => x.Id == id)
+
+         .Select(c => new CourseModel()
+         {
+             Title = c.Title,
+             description = c.description,
+             Teacher = c.Teacher,
+             price = c.price,
+             startDate = c.startDate,
+             ImagesPath = c.ImagesPath
+
+         })
                 .FirstOrDefaultAsync();
         }
-
-
-        //.Select(c => new CourseModel()
-        //{
-        //    Title = c.Title,
-        //        description = c.description,
-        //        Teacher = c.Teacher,
-        //        price = c.price,
-        //        startDate = c.startDate,
-        //        ImagesPath = c.ImagesPath
-        //    })
-
-
-
 
 
 

@@ -1,4 +1,10 @@
 ﻿@using Microsoft.AspNetCore.Identity
+  <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData ["Title"] - ExamensArbeteMVC</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/ExamensArbeteMVC.styles.css" asp-append-version="true" />
 
 @inject SignInManager<IdentityUser> _signinManager
 
@@ -22,8 +28,8 @@ else
 {
 
     <li class="nav-item">
-    <a class="btn btn-outline-primary" asp-controller="Account" asp-action="login">Login</a>
-    <a class="btn btn-primary" asp-controller="Account" asp-action="SignUp">Register</a>
+    <a class="btn btn btn-danger" asp-controller="Account" asp-action="login">Login</a>
+    <a class="btn btn btn-danger" asp-controller="Account" asp-action="SignUp">Register</a>
     </li>
 
     }
