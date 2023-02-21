@@ -1,6 +1,7 @@
 ﻿@using ExamensArbeteMVC.Models;
 @using ExamensArbeteMVC.RepositoryData;
 
+
 @model CourseModel
 
 @{
@@ -11,7 +12,7 @@
    
     <div class ="row">
        @* first colun to the left*@
-        <div class ="col-md-4">
+       @* <div class ="col-md-4">
             <div id="carouselExampleIndicators" class="carousel slide">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -38,7 +39,7 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-        </div>
+        </div>*@
         @* second colun to the right*@
           <div class ="col-md-6">
  
@@ -48,21 +49,21 @@
   
   <img src="..." class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title">@Model.Title</h5>
+    <h5 class="card-title">Title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">Teacher: @Model.Teacher</li>
-    <li class="list-group-item">Price: @Model.price</li>
-    <li class="list-group-item">Start date: @Model.startDate</li>
+    <li class="list-group-item">Teacher: Teacher</li>
+    <li class="list-group-item">Price: price</li>
+    <li class="list-group-item">Start date: startDate</li>
   </ul>
- 
+    
 
   </div>
 </div>
 <br />
 
-@* <hr />*@
+@* <hr />
 <div class ="py-5 bg-light">
     <h3> Other Courses</h3>
     <div class ="row">
@@ -80,17 +81,10 @@
   </ul>
   <div class="card-body">
     <a href="/Course/GetCourseById/course.Id" class="card-link">Course details</a>
-   @* <a href="#" class="card-link">Another link</a>*@
-  </div>
+    <a href="#" class="card-link">Another link</a>
+  </div>*@
 
 
 
                 </div>
-            </div>
-        </div>
-        }
-    </div>
-</div>
-
-    </div>
-</div>
+           

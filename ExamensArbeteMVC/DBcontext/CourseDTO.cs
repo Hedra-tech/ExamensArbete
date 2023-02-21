@@ -13,6 +13,6 @@ namespace ExamensArbeteMVC.DBcontext
         public string? Teacher { get; set; }
         public string? price { get; set; }
         public string? startDate { get; set; }
-        public string ImagesPath { get; set; }
+        public string? ImagesPath { get; set; }
     }
 }
