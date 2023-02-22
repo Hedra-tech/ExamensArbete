@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using ExamensArbeteMVC.Models;
+
 
 namespace ExamensArbeteMVC.DBcontext
 {
@@ -17,7 +16,25 @@ namespace ExamensArbeteMVC.DBcontext
         public DbSet<Form> Contacts { get; set; }
         public DbSet<CourseDTO> Courses { get; set; }
 
+       
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<CourseDTO>().HasData(new CourseDTO()
+            {
+                Id = 1,
+                Title = "C#",
+                description= "Begginers",
+                Teacher="Anna Peterson",
+                price ="120½",
+                startDate="2023-05-05",
+                ImagesPath="",
+
+            }); ;
+
+        }
+
     }
-    
-    }
+}
 

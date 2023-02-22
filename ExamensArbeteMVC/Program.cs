@@ -19,6 +19,7 @@ builder.Services.AddScoped<ICourseData, CourseData>();
 
 var app = builder.Build();
 
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
@@ -30,9 +31,18 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
+using var scope = app.Services.CreateScope();
+var dbContext = scope.ServiceProvider.GetRequiredService<StoreContext>();
+
+//dbContext.Database.EnsureDeleted();
+dbContext.Database.EnsureCreated();
+
 app.UseRouting();
 
+
+app.UseAuthentication();
 app.UseAuthorization();
+
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapDefaultControllerRoute();

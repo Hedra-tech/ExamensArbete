@@ -13,15 +13,16 @@
 }
 @if (user)
 {
-  <li class="nav-item">
-         <div>
-            Hello @((User.Identity?.Name))
-      
-       
-            <a class="btn btn-secondary" asp-action="LogOut"  asp-controller="Account">Logout</a>
-        </div>
-    </li> 
 
+    <li class="nav-item  text-white">
+        
+             Hello @((User.Identity?.Name))
+
+
+        <a class="btn btn btn-danger" asp-action="LogOut" asp-controller="Account">Log out</a>
+        
+    </li> 
+   
 }
 else
 
