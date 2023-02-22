@@ -83,14 +83,39 @@ html {
     }*/
 
     body {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
+        height: 150%;
     }
 
+    #wrap {
+        min-height: 100%;
+    }
+
+    #main {
+        overflow: auto;
+        padding-bottom: 160px; /* this needs to be bigger than footer height*/
+    }
+
+
     #footer {
-        margin-top: auto;
         background-color: #000;
         color: #fff;
         opacity: .5;
+        position: relative;
+        margin-top: -160px; /* negative value of footer height */
+        height: 160px;
+        clear: both;
+        padding-top: 10px;
+        padding-bottom: 50px;
+    }
+
+
+
+    .text-over-img {
+        text-align: left;
+    }
+
+    .top-left {
+        position: absolute;
+        top: 350px;
+        left: 100px;
     }
