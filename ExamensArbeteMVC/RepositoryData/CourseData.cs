@@ -1,12 +1,7 @@
 ﻿using ExamensArbeteMVC.DBcontext;
 using ExamensArbeteMVC.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using ExamensArbeteMVC.DBcontext;
+
 
 namespace ExamensArbeteMVC.RepositoryData
 {

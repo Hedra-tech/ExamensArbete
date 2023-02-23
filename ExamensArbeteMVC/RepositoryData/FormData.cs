@@ -32,10 +32,10 @@ namespace ExamensArbeteMVC.RepositoryData
 
         }
 
-        internal Task GetAllCourses()
-        {
-            throw new NotImplementedException();
-        }
+        //internal Task GetAllCourses()
+        //{
+        //    throw new NotImplementedException();
+        //}
 
 
         //private List<CourseModel> DataSource()

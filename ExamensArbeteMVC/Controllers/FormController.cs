@@ -11,21 +11,26 @@ namespace ExamensArbeteMVC.Controllers
         {
             _courseData = courseData;
         }
-        public ViewResult ContactForm(bool isSuccess = false)
+        public ViewResult ContactForm(bool isSuccess = false, int courseId = 0)
         {
             ViewBag.IsSuccess = isSuccess;
+            ViewBag.courseId = courseId;
             return View();
         }
         [HttpPost]
         //I use IactionResult to return any type of return method
         public async Task<IActionResult> ContactForm(ContactFormModel contactFormModel)
         {
-            //when the id is bigger than 0, then it will redirect us to the form
-            int id = await _courseData.ContactForm(contactFormModel);
-            if (id > 0)
+            if (ModelState.IsValid)
             {
-                return RedirectToAction(nameof(ContactForm), new { isSuccess = true });
+                //when the id is bigger than 0, then it will redirect us to the form
+                int id = await _courseData.ContactForm(contactFormModel);
+                if (id > 0)
+                {
+                    return RedirectToAction(nameof(ContactForm), new { isSuccess = true });
+                }
             }
+              
             return View();
 
         }

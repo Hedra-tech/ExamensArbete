@@ -22,6 +22,11 @@ namespace ExamensArbeteMVC.Controllers
         {
             return View();
         }
+        //public IActionResult SignUp(bool isSuccess = false)
+        //{
+        //    ViewBag.IsSuccess = isSuccess;
+        //    return View();
+        //}
         [Route("signup")]
         [HttpPost]
         public async Task<IActionResult> SignUp(SignUpModel userModel)

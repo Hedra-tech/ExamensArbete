@@ -5,9 +5,9 @@ namespace ExamensArbeteMVC.Models
     public class SignUpModel
     {
         [Required (ErrorMessage = "Write youe Email, please ")]
-        [EmailAddress(ErrorMessage ="Please enter a valid email")]
+        [RegularExpression("^[a-z0-9._\\.-]+@([a-z0-9-]+\\.)+[a-z]{2,3}$", ErrorMessage = "Invalid Email Address")]
         public string Email { get; set; }
-        [Required(ErrorMessage = "Choose a strong password, please ")]
+        [Required(ErrorMessage = "Choose a password, please ")]
         [Compare("ConfirmPassword", ErrorMessage ="Password dosn't match")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
