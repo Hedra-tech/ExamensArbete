@@ -19,25 +19,11 @@
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div  class="navbar-collapse collapse d-sm-inline-flex justify-content-between ">
-              @*    <div class="row">
-          <div class="col-md-6">
-            <div>
-             <a class="navbar-brand" href="/"><img alt="Logo" class="img-fluid" class="logo" src="~/Images/linkedin.png" width="20" height="20" /></a> 
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-5 ml-auto d-flex align-items-center mt-4 mt-md-0">
-            <div>
-             <a class="navbar-brand" href="/"><p class=" text-white" >HED courses</p> </a> 
-            
-            </div>
-          </div>
-        </div>*@
-
-       
-                <a class=" text-white navbar-brand" href="/">
-                    <img  class="logo " src="~/Images/linkedin.png" width="20" height="20" />
-                 HED courses
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <a class="navbar-brand" href="/">
+                    @*   I use asp-append-version to bring the image from server and not from memory cash*@
+                    <img class="logo" src="~/Images/linkedin.png" width="20" height="20" />
+                    HED courses
                 </a>
                 
                 <div class="collapse navbar-collapse  m-2 flex-sm-row-reverse  ">
