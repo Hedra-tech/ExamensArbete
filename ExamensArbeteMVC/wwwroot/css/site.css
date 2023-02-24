@@ -22,8 +22,6 @@ html {
         padding: 5px 12px 6px;
         color: aliceblue;
         font-size: 12px;
-        line-hieght: 14px;
-        font-wieght: 600;
         background: #ff0000;
     }
 
@@ -116,6 +114,13 @@ html {
 
     .top-left {
         position: absolute;
-        top: 350px;
+        top: 300px;
         left: 100px;
+    }
+
+    .angled-gradient {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background: linear-gradient(70deg, #ebb1b1, #b1e8e2);
     }
