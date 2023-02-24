@@ -27,9 +27,9 @@ namespace ExamensArbeteMVC.DBcontext
                 Title = "C#",
                 description= "Begginers",
                 Teacher="Anna Peterson",
-                price ="120½",
+                price ="120$",
                 startDate="2023-05-05",
-                ImagesPath="",
+                ImagesPath="/Images/Courses/Course1.jpg",
 
             }); ;
 
@@ -37,4 +37,5 @@ namespace ExamensArbeteMVC.DBcontext
 
     }
 }
+
 

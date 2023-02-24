@@ -119,8 +119,16 @@ html {
     }
 
     .angled-gradient {
-        background-size: cover;
+        background-size: 100px 80px;
         background-repeat: no-repeat;
         background-position: center center;
         background: linear-gradient(70deg, #ebb1b1, #b1e8e2);
+    }
+
+    .logoText {
+        padding-left: 50px;
+    }
+
+    .logoText2 {
+        padding-right: 20px;
     }

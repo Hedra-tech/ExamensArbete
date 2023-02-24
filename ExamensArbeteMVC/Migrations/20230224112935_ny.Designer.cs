@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ExamensArbeteMVC.Migrations
 {
     [DbContext(typeof(StoreContext))]
-    [Migration("20230217110150_ny")]
+    [Migration("20230224112935_ny")]
     partial class ny
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,7 +33,6 @@ namespace ExamensArbeteMVC.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("ImagesPath")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Teacher")
@@ -54,6 +53,18 @@ namespace ExamensArbeteMVC.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Courses");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            ImagesPath = "/Images/Courses/Course1.jpg",
+                            Teacher = "Anna Peterson",
+                            Title = "C#",
+                            description = "Begginers",
+                            price = "120$",
+                            startDate = "2023-05-05"
+                        });
                 });
 
             modelBuilder.Entity("ExamensArbeteMVC.DBcontext.Form", b =>

@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ExamensArbeteMVC.Migrations
 {
-    public partial class addedidentitycore : Migration
+    public partial class ny : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -64,6 +64,24 @@ namespace ExamensArbeteMVC.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Contacts", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Courses",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Teacher = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    price = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    startDate = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ImagesPath = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Courses", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -172,6 +190,11 @@ namespace ExamensArbeteMVC.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.InsertData(
+                table: "Courses",
+                columns: new[] { "Id", "ImagesPath", "Teacher", "Title", "description", "price", "startDate" },
+                values: new object[] { 1, "/Images/Courses/Course1.jpg", "Anna Peterson", "C#", "Begginers", "120$", "2023-05-05" });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -231,6 +254,9 @@ namespace ExamensArbeteMVC.Migrations
 
             migrationBuilder.DropTable(
                 name: "Contacts");
+
+            migrationBuilder.DropTable(
+                name: "Courses");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
