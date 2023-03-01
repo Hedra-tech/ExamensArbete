@@ -1,40 +1,40 @@
-﻿<div class ="container">
-       <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+﻿<div class="container">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ExamensArbeteMVC.styles.css" asp-append-version="true" />
-    
-    
+
+
     <h4>Here you can check our courses:</h4>
 
     <div class="row ">
-    @foreach (var course in Model)
-    {
-    <div class=" col-md-3 ">
-    <div class="card mb-4 shadow">
+        @foreach (var course in Model)
+        {
+            <div class=" col-md-3 ">
+                <div class="card mb-4 shadow">
 
-    <img class="card-img-top" src="@course.ImagesPath " asp-for= "Images"   >
+                    <img class="card-img-top" src="@course.ImagesPath " asp-for="Images">
 
-    <div class="card-body">
-    <h5 class="card-title">@course.Title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    </div>
-    <ul class="list-group list-group-flush">
-    <li class="list-group-item">Teacher: @course.Teacher</li>
-    <li class="list-group-item">Price: @course.price</li>
-    <li class="list-group-item">Start date: @course.startDate</li>
-    </ul>
-    <div class="card-body">
-         <a href ="/course/getcoursebyid/@course.Id"class="card-link" >Courses details</a>
-    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">@course.Title</h5>
+                        <p class="card-text">@course.description</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Teacher: @course.Teacher</li>
+                        <li class="list-group-item">Price: @course.price</li>
+                        <li class="list-group-item">Start date: @course.startDate</li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="@Url.Action("GetCourseId", "Course", new { id = course.Id })" class="card-link">Courses details</a>
+                    </div>
 
-    </div>
+                </div>
 
+            </div>
+        }
     </div>
-    }
-    </div>
-    </div>
+</div>
 
- @*   asp-area="" asp-controller="Course" asp-action="GetCourseById"*@
+@*   asp-area="" asp-controller="Course" asp-action="GetCourseById"*@
 
 
 @*

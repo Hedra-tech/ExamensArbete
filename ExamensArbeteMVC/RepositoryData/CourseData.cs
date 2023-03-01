@@ -25,25 +25,52 @@ namespace ExamensArbeteMVC.RepositoryData
                     ImagesPath = c.ImagesPath
                 }).ToListAsync();
         }
+        //public async Task<CourseModel> GetCourseId(int id)
+        //{
 
-        public async Task<CourseModel> GetCourseById(int id)
+        //    return await _context.Courses
+        //     .FirstOrDefaultAsync(x => x.Id == id);
+        //}
+
+        public async Task<CourseModel> GetCourse(int courseId)
         {
-            
-            return await _context.Courses
-                .Where(x => x.Id == id)
+            var courseDTO = _context.Courses.FirstOrDefault(c => c.Id == courseId);
 
-         .Select(c => new CourseModel()
-         {
-             Title = c.Title,
-             description = c.description,
-             Teacher = c.Teacher,
-             price = c.price,
-             startDate = c.startDate,
-             ImagesPath = c.ImagesPath
+            if (courseDTO == null)
+            {
+                return null;
+            }
 
-         })
-                .FirstOrDefaultAsync();
+            var courseModel = new CourseModel
+            {
+                Id = courseDTO.Id,
+                Title = courseDTO.Title,
+                description = courseDTO.description,
+                Teacher = courseDTO.Teacher,
+                price= courseDTO.price,
+                ImagesPath = courseDTO.ImagesPath,
+            };
+
+            return courseModel;
         }
+        //public async Task<CourseModel> GetCourseId(int id)
+        //{
+
+        //    return await _context.Courses
+        //        .Where(x => x.Id == id)
+
+        // .Select(c => new CourseModel()
+        // {
+        //     Title = c.Title,
+        //     description = c.description,
+        //     Teacher = c.Teacher,
+        //     price = c.price,
+        //     startDate = c.startDate,
+        //     ImagesPath = c.ImagesPath
+
+        // })
+        //        .FirstOrDefaultAsync();
+        //}
 
 
 

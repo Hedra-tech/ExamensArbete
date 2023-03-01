@@ -21,11 +21,17 @@ namespace ExamensArbeteMVC.Controllers
             var data = await _courseData.GetAllCourses();
             return View(data);
         }
-        //[Route("course-details/{id:int:min(1)}", Name = "courseDetailsRoute")]
-        public async Task<ViewResult> GetCourseById(int id)
+     
+        public async Task<IActionResult> GetCourseId(int id)
         {
-            var data =  await _courseData.GetCourseById(id);
-            return View(data);
+            var course = await _courseData.GetCourse(id);
+
+            if (course == null)
+            {
+                return NotFound();
+            }
+
+            return View(course);
         }
 
 
@@ -35,4 +41,3 @@ namespace ExamensArbeteMVC.Controllers
 
     }
 }
-//test

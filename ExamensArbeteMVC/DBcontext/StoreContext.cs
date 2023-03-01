@@ -68,7 +68,7 @@ namespace ExamensArbeteMVC.DBcontext
             modelBuilder.Entity<CourseDTO>().HasData(new CourseDTO()
             {
                 Id = 5,
-                Title = "Python",
+                Title = "Cloud and DevOps",
                 description= "Begginers",
                 Teacher="Anna Peterson",
                 price ="120$",
@@ -79,7 +79,7 @@ namespace ExamensArbeteMVC.DBcontext
             modelBuilder.Entity<CourseDTO>().HasData(new CourseDTO()
             {
                 Id = 6,
-                Title = "Java",
+                Title = "Cyber Security",
                 description= "Begginers",
                 Teacher="Anna Peterson",
                 price ="120$",
@@ -90,7 +90,7 @@ namespace ExamensArbeteMVC.DBcontext
             modelBuilder.Entity<CourseDTO>().HasData(new CourseDTO()
             {
                 Id = 7,
-                Title = "JavaScript",
+                Title = "UI/UX design",
                 description= "Begginers",
                 Teacher="Anna Peterson",
                 price ="120$",
@@ -101,7 +101,7 @@ namespace ExamensArbeteMVC.DBcontext
             modelBuilder.Entity<CourseDTO>().HasData(new CourseDTO()
             {
                 Id = 8,
-                Title = "C#",
+                Title = "SQL Server",
                 description= "Begginers",
                 Teacher="Anna Peterson",
                 price ="120$",
