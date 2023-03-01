@@ -80,17 +80,12 @@ html {
         opacity: .5;
     }*/
 
-    body {
-        height: 150%;
+    .wrapper {
+        min-height: 100vh;
     }
 
-    #wrap {
-        min-height: 100%;
-    }
-
-    #main {
-        overflow: auto;
-        padding-bottom: 160px; /* this needs to be bigger than footer height*/
+    main {
+        margin-bottom: 160px; /* height of the footer */
     }
 
 
@@ -103,7 +98,7 @@ html {
         height: 160px;
         clear: both;
         padding-top: 10px;
-        padding-bottom: 50px;
+        padding-bottom: 0px;
     }
 
 
@@ -131,4 +126,7 @@ html {
 
     .logoText2 {
         padding-right: 20px;
+    }
+    .box{
+        padding: 50px;
     }

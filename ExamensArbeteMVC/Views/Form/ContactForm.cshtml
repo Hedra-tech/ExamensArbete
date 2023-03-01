@@ -24,13 +24,18 @@
                     @if (ViewBag.IsSuccess == true)
                     {
                         <div class="alert alert-success" role="alert">
-                            <h4 class="alert-heading">Thank you!</h4>
+                            <div class="row flex-sm-row-reverse ">
+
+                                <button  class="btn-close" data-dismiss="alert" aria-label="Close">
+                                @*<span aria-hidden="true">&times;</span>*@
+                            </button>
+                                <h4 class="alert-heading">Thank you!</h4>
+                            </div>
                             <p>We are thrilled to hear from you. We are processing your request and will return your contact as soon as possible....</p>
                             <hr>
                             <p class="mb-0"> We are very happy to have you with us. We hope you find a useful course.</p>
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
+                            <br>
+                           
                         </div>
                     }
 
