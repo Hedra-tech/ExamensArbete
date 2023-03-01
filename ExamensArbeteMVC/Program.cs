@@ -8,7 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<StoreContext>(option => option.UseSqlServer(("server = .; Database= Store ; Integrated security=True; TrustServerCertificate=True")));
+builder.Services.AddDbContext<StoreContext>(options => options.UseSqlServer("Data Source=(localdb)\\ProjectModels;Initial Catalog=Store;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"));
+//builder.Services.AddDbContext<StoreContext>(option => option.UseSqlServer(("server = .; Database= Store ; Integrated security=True; TrustServerCertificate=True")));
 builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<StoreContext>();
 builder.Services.AddControllersWithViews();
 
@@ -34,7 +35,7 @@ app.UseStaticFiles();
 using var scope = app.Services.CreateScope();
 var dbContext = scope.ServiceProvider.GetRequiredService<StoreContext>();
 
-//dbContext.Database.EnsureDeleted();
+dbContext.Database.EnsureDeleted();
 dbContext.Database.EnsureCreated();
 
 app.UseRouting();
