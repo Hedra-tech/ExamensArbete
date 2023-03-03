@@ -15,7 +15,7 @@
                     <img class="card-img-top" src="@course.ImagesPath " asp-for="Images">
 
                     <div class="card-body">
-                        <h5 class="card-title">@course.Title</h5>
+                        <h5 class="card-title">@course.Id</h5>
                         <p class="card-text">@course.description</p>
                     </div>
                     <ul class="list-group list-group-flush">
@@ -24,7 +24,8 @@
                         <li class="list-group-item">Start date: @course.startDate</li>
                     </ul>
                     <div class="card-body">
-                        <a href="@Url.Action("GetCourseId", "Course", new { id = course.Id })" class="card-link">Courses details</a>
+                       <a href="@Url.Action("GetCourseId", "Course", new { id = course.Id })" class="card-link">Courses details</a>
+                        @*<a class="card-link" asp-area="" asp-controller="Course" asp-action="GetCourseId"asp-route-id="@Model.Id">Read more</a>*@
                     </div>
 
                 </div>

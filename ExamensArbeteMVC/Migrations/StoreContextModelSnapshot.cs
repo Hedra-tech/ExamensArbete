@@ -58,7 +58,77 @@ namespace ExamensArbeteMVC.Migrations
                             Id = 1,
                             ImagesPath = "/Images/Courses/Course1.jpg",
                             Teacher = "Anna Peterson",
+                            Title = "Python",
+                            description = "Begginers",
+                            price = "120$",
+                            startDate = "2023-05-05"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            ImagesPath = "/Images/Courses/Course1.jpg",
+                            Teacher = "Anna Peterson",
+                            Title = "Java",
+                            description = "Begginers",
+                            price = "120$",
+                            startDate = "2023-05-05"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            ImagesPath = "/Images/Courses/Course2.jpg",
+                            Teacher = "Anna Peterson",
+                            Title = "JavaScript",
+                            description = "Begginers",
+                            price = "120$",
+                            startDate = "2023-05-05"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            ImagesPath = "/Images/Courses/Course2.jpg",
+                            Teacher = "Anna Peterson",
                             Title = "C#",
+                            description = "Begginers",
+                            price = "120$",
+                            startDate = "2023-05-05"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            ImagesPath = "/Images/Courses/Course1.jpg",
+                            Teacher = "Anna Peterson",
+                            Title = "Cloud and DevOps",
+                            description = "Begginers",
+                            price = "120$",
+                            startDate = "2023-05-05"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            ImagesPath = "/Images/Courses/Course1.jpg",
+                            Teacher = "Anna Peterson",
+                            Title = "Cyber Security",
+                            description = "Begginers",
+                            price = "120$",
+                            startDate = "2023-05-05"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            ImagesPath = "/Images/Courses/Course2.jpg",
+                            Teacher = "Anna Peterson",
+                            Title = "UI/UX design",
+                            description = "Begginers",
+                            price = "120$",
+                            startDate = "2023-05-05"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            ImagesPath = "/Images/Courses/Course2.jpg",
+                            Teacher = "Anna Peterson",
+                            Title = "SQL Server",
                             description = "Begginers",
                             price = "120$",
                             startDate = "2023-05-05"

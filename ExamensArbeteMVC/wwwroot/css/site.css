@@ -127,6 +127,53 @@ html {
     .logoText2 {
         padding-right: 20px;
     }
-    .box{
+
+    .box {
         padding: 50px;
+    }
+
+    .card {
+        border: none;
+    }
+
+    .jumbotron h1 {
+        font-size: 48px;
+        font-weight: bold;
+        color: #fff;
+    }
+
+    .jumbotron p {
+        font-size: 18px;
+        color: #fff;
+    }
+
+    .jumbotron {
+        background-color: #b2aeaeeb;
+    }
+
+
+    .options {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+        .options > div {
+            margin: 50px 0;
+            /* for demo */
+        }
+
+        .options .wrap {
+            padding: 1rem;
+            text-align: center;
+            background-color: #dff5fb;
+        }
+
+    .blockico {
+        margin-top: -110px;
+    }
+
+    .aboutText {
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
