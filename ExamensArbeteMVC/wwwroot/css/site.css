@@ -114,7 +114,8 @@ html {
     }
 
     .angled-gradient {
-        background-size: 100px 80px;
+        padding:100px;
+        background-size: 100px ;
         background-repeat: no-repeat;
         background-position: center center;
         background: linear-gradient(70deg, #ebb1b1, #b1e8e2);
@@ -177,3 +178,5 @@ html {
         padding-top: 50px;
         padding-bottom: 50px;
     }
+
+

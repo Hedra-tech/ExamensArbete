@@ -29,7 +29,7 @@ namespace ExamensArbeteMVC.DBcontext
                 Teacher="Anna Peterson",
                 price ="120$",
                 startDate="2023-05-05",
-                ImagesPath="/Images/Courses/Course1.jpg",
+                ImagesPath="/Images/Courses/Photo003.jpg",
 
             }); ;
             modelBuilder.Entity<CourseDTO>().HasData(new CourseDTO()
@@ -40,7 +40,7 @@ namespace ExamensArbeteMVC.DBcontext
                 Teacher="Anna Peterson",
                 price ="120$",
                 startDate="2023-05-05",
-                ImagesPath="/Images/Courses/Course1.jpg",
+                ImagesPath="/Images/Courses/Photo001.jpg",
 
             }); ;
             modelBuilder.Entity<CourseDTO>().HasData(new CourseDTO()
@@ -51,7 +51,7 @@ namespace ExamensArbeteMVC.DBcontext
                 Teacher="Anna Peterson",
                 price ="120$",
                 startDate="2023-05-05",
-                ImagesPath="/Images/Courses/Course2.jpg",
+                ImagesPath="/Images/Courses/Photo002.jpg",
 
             }); ;
             modelBuilder.Entity<CourseDTO>().HasData(new CourseDTO()
@@ -62,7 +62,7 @@ namespace ExamensArbeteMVC.DBcontext
                 Teacher="Anna Peterson",
                 price ="120$",
                 startDate="2023-05-05",
-                ImagesPath="/Images/Courses/Course2.jpg",
+                ImagesPath="/Images/Courses/Photo004.jpg",
 
             }); ;
             modelBuilder.Entity<CourseDTO>().HasData(new CourseDTO()
@@ -73,7 +73,7 @@ namespace ExamensArbeteMVC.DBcontext
                 Teacher="Anna Peterson",
                 price ="120$",
                 startDate="2023-05-05",
-                ImagesPath="/Images/Courses/Course1.jpg",
+                ImagesPath="/Images/Courses/Photo008.jpg",
 
             }); ;
             modelBuilder.Entity<CourseDTO>().HasData(new CourseDTO()
@@ -84,7 +84,7 @@ namespace ExamensArbeteMVC.DBcontext
                 Teacher="Anna Peterson",
                 price ="120$",
                 startDate="2023-05-05",
-                ImagesPath="/Images/Courses/Course1.jpg",
+                ImagesPath="/Images/Courses/Photo007.jpg",
 
             }); ;
             modelBuilder.Entity<CourseDTO>().HasData(new CourseDTO()
@@ -95,7 +95,7 @@ namespace ExamensArbeteMVC.DBcontext
                 Teacher="Anna Peterson",
                 price ="120$",
                 startDate="2023-05-05",
-                ImagesPath="/Images/Courses/Course2.jpg",
+                ImagesPath="/Images/Courses/Photo005.jpg",
 
             }); ;
             modelBuilder.Entity<CourseDTO>().HasData(new CourseDTO()
@@ -106,7 +106,7 @@ namespace ExamensArbeteMVC.DBcontext
                 Teacher="Anna Peterson",
                 price ="120$",
                 startDate="2023-05-05",
-                ImagesPath="/Images/Courses/Course2.jpg",
+                ImagesPath="/Images/Courses/Photo007.jpg",
 
             }); ;
 
