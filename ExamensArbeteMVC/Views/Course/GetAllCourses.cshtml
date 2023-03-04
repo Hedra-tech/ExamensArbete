@@ -4,7 +4,8 @@
     <link rel="stylesheet" href="~/ExamensArbeteMVC.styles.css" asp-append-version="true" />
 
 
-    <h4>Here you can check our courses:</h4>
+    <h4>All IT & Software courses:</h4>
+    <br />
 
     <div class="row ">
         @foreach (var course in Model)
@@ -16,7 +17,7 @@
 
                     <div class="card-body">
                         <h5 class="card-title">@course.Title</h5>
-                        <p class="card-text">@course.description</p>
+                       @* <p class="card-text">@course.description</p>*@
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">Teacher: @course.Teacher</li>

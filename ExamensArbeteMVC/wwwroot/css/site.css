@@ -114,11 +114,11 @@ html {
     }
 
     .angled-gradient {
-        padding:100px;
-        background-size: 100px ;
+        padding: 100px;
+        background-size: 100px;
         background-repeat: no-repeat;
         background-position: center center;
-        background: linear-gradient(70deg, #ebb1b1, #b1e8e2);
+        background: linear-gradient(70deg, #aac7e7, #dce0e1);
     }
 
     .logoText {
@@ -131,6 +131,8 @@ html {
 
     .box {
         padding: 50px;
+        max-width: 80%;
+        height: auto;
     }
 
     .card {
@@ -149,7 +151,7 @@ html {
     }
 
     .jumbotron {
-        background-color: #b2aeaeeb;
+        background-color: #aac7e5;
     }
 
 
@@ -167,7 +169,7 @@ html {
         .options .wrap {
             padding: 1rem;
             text-align: center;
-            background-color: #dff5fb;
+            background-color: #aac7e7;
         }
 
     .blockico {
@@ -178,5 +180,37 @@ html {
         padding-top: 50px;
         padding-bottom: 50px;
     }
+
+    .LineInfo {
+        background-color: black;
+        padding: 50px;
+        background-size: 100px;
+        background-position: center center;
+        width: 100%;
+    }
+
+    .AboutUsBK {
+        background-color: white;
+        padding: 50px;
+        background-size: 100px;
+        background-position: center center;
+        width: 100%;
+    }
+
+    .image-container {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hover-zoom {
+        transition: transform 0.5s ease;
+    }
+
+        .hover-zoom:hover {
+            transform: scale(1.2);
+        }
+
+ 
+
 
 

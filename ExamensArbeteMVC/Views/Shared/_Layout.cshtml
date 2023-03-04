@@ -24,7 +24,7 @@
                 <a class="navbar-brand text-white logoText" href="/">
                     @*   I use asp-append-version to bring the image from server and not from memory cash*@
                     <img class="logo" src="~/Images/linkedin.png" width="20" height="20" />
-                    HED courses
+                    SkillStream
                 </a>
                 
                 <div class="collapse navbar-collapse  m-2 flex-sm-row-reverse  ">
@@ -36,15 +36,16 @@
                         <li class="nav-item">
                             <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-area="" asp-controller="Course" asp-action="GetAllCourses">Courses</a>
+                            </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="AboutUs">About us</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" asp-area="" asp-controller="Form" asp-action="ContactForm">Contact us</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Course" asp-action="GetAllCourses">Courses</a>
-                        </li>
+                       
                     </ul>
                 </div>
             </div>

@@ -15,10 +15,7 @@ namespace ExamensArbeteMVC.Models
         public string? startDate { get; set; }
         public string? ImagesPath { get; set; }
 
-        //internal object FirstOrDefaultAsync()
-        //{
-        //    throw new NotImplementedException();
-        //}
+    
     }
     }
 
