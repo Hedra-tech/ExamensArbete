@@ -55,12 +55,20 @@
                 <img class="card-img-top" src="@Model.ImagesPath " asp-for="Images">
                 <div class="card-body">
                     <h5 class="card-title">Course: @Model.Title</h5>
-                    <p class="card-text">Description: @Model.description</p>
+                    @*<p class="card-text">Description: @Model.description</p>*@
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">Teacher: @Model.Teacher</li>
                     <li class="list-group-item">Price: @Model.price</li>
-                    <li class="list-group-item">Start date: @Model.startDate</li>
+                   @* <li class="list-group-item">Start date: @Model.startDate</li>*@
+                    <br />
+                    <div class="container">
+                    <p>If you're interested in registering for the course, please click on the button below to contact us by email. We'll be happy to provide you with more information and guide you through the registration process.</p>
+                    <div class="container" style="text-align: left">
+                        <a asp-controller="Form" asp-action="ContactForm" type="button" class="btn btn-outline-primary btn-lg" value="About us">Contact us</a>
+                    </div>
+                    </div>
+                    <br />
                 </ul>
 
 
@@ -68,11 +76,37 @@
         </div>
         <br />
 
-        @* <hr />
+        <div class="col-md-6">
+            <div class="card mb-6 shadow">
+          <div class="card-body">
+                    <h5 class="card-title">Course description: </h5>
+                    <p class="card-text"> @Model.description </p>
+                    <h5 class="card-title">This course includes: </h5>
+                </div>
+                <div>
+               
+                <ul class="list-group list-group-flush">
+                        <li class="list-group-item">3 months, 2 times per week</li>
+                    <li class="list-group-item">2 Hours on demand video</li>
+                    <li class="list-group-item">Full lifetime access</li>
+                    <li class="list-group-item">Certificate of completion </li>
+                    <li class="list-group-item">1 Downloadable resource</li>
+                    <li class="list-group-item">Access on mobile and TV </li>
+                      
+                        <li class="list-group-item">Up to 15 students per class</li>
+                        <li class="list-group-item">Course materials and classes are in English</li>
+                </ul>
+                </div>
+        </div>
+        </div>
+
+
+      @*  Other courses*@
+         <hr />
         <div class ="py-5 bg-light">
         <h3> Other Courses</h3>
         <div class ="row">
-        @for (int i = 0; i<3; i++){
+        for (int i = 0; i<3; i++){
         <div class="col-md-4">
         <div class="card mb-4 shadow-sm">
         <div class="card-body">
@@ -87,7 +121,7 @@
         <div class="card-body">
         <a href="/Course/GetCourseById/course.Id" class="card-link">Course details</a>
         <a href="#" class="card-link">Another link</a>
-        </div>*@
+        </div>
 
 
 
