@@ -1,8 +1,8 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "GetCourseId";
 }
 
+@using ExamensArbeteMVC.DBcontext;
 @using ExamensArbeteMVC.Models;
 @using ExamensArbeteMVC.RepositoryData;
 
@@ -13,39 +13,11 @@
     Layout = "_Layout";
 }
 <div class="container">
-    <h3>Courses Details:</h3>
+    <br />
 
     <div class="row">
-        @* first colun to the left*@
-        @* <div class ="col-md-4">
-        <div id="carouselExampleIndicators" class="carousel slide">
-        <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-        <div class="carousel-item active">
-        <img src="~/Images/Courses/Course1.jpg" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-        <img src="~/Images/Courses/Course2.jpg" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-        <img src="~/Images/Courses/Course3.jpg" class="d-block w-100" alt="...">
-        </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-        </button>
-        </div>
-        </div>*@
-        @* second colun to the right*@
+
+        @* column to the left*@
         <div class="col-md-6">
 
 
@@ -60,72 +32,84 @@
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">Teacher: @Model.Teacher</li>
                     <li class="list-group-item">Price: @Model.price</li>
-                   @* <li class="list-group-item">Start date: @Model.startDate</li>*@
-                    <br />
-                    <div class="container">
-                    <p>If you're interested in registering for the course, please click on the button below to contact us by email. We'll be happy to provide you with more information and guide you through the registration process.</p>
-                    <div class="container" style="text-align: left">
-                        <a asp-controller="Form" asp-action="ContactForm" type="button" class="btn btn-outline-primary btn-lg" value="About us">Contact us</a>
-                    </div>
-                    </div>
-                    <br />
+                   <br />
+                    @* <li class="list-group-item">Start date: @Model.startDate</li>*@
+                   
                 </ul>
+                   
+                   <div class=" container">
+                        <p>If you're interested in registering for the course, please click on the button below to contact us by email. We'll be happy to provide you with more information and guide you through the registration process.</p>
+                        <div class="container" style="text-align: left">
+                            <a asp-controller="Form" asp-action="ContactForm" type="button" class="btn btn-outline-primary btn-lg" value="About us">Contact us</a>
+                        </div>
+                    </div>
+                    <br />
+                   
+               
 
 
             </div>
         </div>
         <br />
-
+        @* column to the left*@
         <div class="col-md-6">
             <div class="card mb-6 shadow">
-          <div class="card-body">
+                <div class="card-body">
                     <h5 class="card-title">Course description: </h5>
                     <p class="card-text"> @Model.description </p>
                     <h5 class="card-title">This course includes: </h5>
                 </div>
                 <div>
-               
-                <ul class="list-group list-group-flush">
+
+                    <ul class="list-group list-group-flush">
                         <li class="list-group-item">3 months, 2 times per week</li>
-                    <li class="list-group-item">2 Hours on demand video</li>
-                    <li class="list-group-item">Full lifetime access</li>
-                    <li class="list-group-item">Certificate of completion </li>
-                    <li class="list-group-item">1 Downloadable resource</li>
-                    <li class="list-group-item">Access on mobile and TV </li>
-                      
+                        <li class="list-group-item">2 Hours on demand video</li>
+                        <li class="list-group-item">Full lifetime access</li>
+                        <li class="list-group-item">Certificate of completion </li>
+                        <li class="list-group-item">1 Downloadable resource</li>
+                        <li class="list-group-item">Access on mobile and TV </li>
+
                         <li class="list-group-item">Up to 15 students per class</li>
                         <li class="list-group-item">Course materials and classes are in English</li>
-                </ul>
+                    </ul>
                 </div>
+            </div>
         </div>
+        <br />
+
+        @*  Other courses*@
+
+        <div class="py-5 bg-light">
+            <hr />
+            <h3> Other Courses</h3>
+            <div class="row">
+                 @for (int i = 0; i<3; i++)
+                {
+                    <div class=" col-md-4 ">
+                        <div class="card mb-4 shadow">
+
+                            <img class="card-img-top" src="@Model.ImagesPath " asp-for="Images">
+
+                            <div class="card-body">
+                                <h5 class="card-title">@course.Title</h5>
+                                @* <p class="card-text">@course.description</p>*@
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Teacher: @Model.Teacher</li>
+                                <li class="list-group-item">Price: @Model.price</li>
+                                <li class="list-group-item">Start date: @Model.startDate</li>
+                            </ul>
+                            <div class="card-body">
+                                <a href="/Course/GetCourseId/course.Id" class="card-link">Course details</a>
+                                @*<a href="@Url.Action("GetCourseId", "Course", new { id = course.Id })" class="card-link">Courses details</a>*@
+                                @*<a class="card-link" asp-area="" asp-controller="Course" asp-action="GetCourseId"asp-route-id="@Model.Id">Read more</a>*@
+                            </div>
+
+                        </div>
+
+                    </div>
+                }
+
+            </div>
         </div>
-
-
-      @*  Other courses*@
-         <hr />
-        <div class ="py-5 bg-light">
-        <h3> Other Courses</h3>
-        <div class ="row">
-        for (int i = 0; i<3; i++){
-        <div class="col-md-4">
-        <div class="card mb-4 shadow-sm">
-        <div class="card-body">
-        <h3 class="card-title">Course.Title</h3>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-
-        <ul class="list-group list-group-flush">
-        <li class="list-group-item">Teacher: course.Teacher</li>
-        <li class="list-group-item">Price: course.price</li>
-        <li class="list-group-item">Start date: course.startDate</li>
-        </ul>
-        <div class="card-body">
-        <a href="/Course/GetCourseById/course.Id" class="card-link">Course details</a>
-        <a href="#" class="card-link">Another link</a>
-        </div>
-
-
-
     </div>
-
-
-

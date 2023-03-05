@@ -166,6 +166,7 @@ html {
             /* for demo */
         }
 
+
         .options .wrap {
             padding: 1rem;
             text-align: center;
@@ -209,6 +210,17 @@ html {
         .hover-zoom:hover {
             transform: scale(1.2);
         }
+
+    .btn-primary {
+        background-color: #067ae1;
+        border-color: #067ae1;
+    }
+
+        .btn-primary:hover {
+            background-color: #044b8a;
+            border-color: #044b8a;
+        }
+}
 
  
 

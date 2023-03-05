@@ -1,5 +1,6 @@
 ﻿using ExamensArbeteMVC.DBcontext;
 using ExamensArbeteMVC.Models;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -54,26 +55,21 @@ namespace ExamensArbeteMVC.RepositoryData
 
             return courseModel;
         }
-        //public async Task<CourseModel> GetCourseId(int id)
+        //public async Task<List<CourseModel>> GetOtherCoursesAsync(int count)
         //{
-
         //    return await _context.Courses
-        //        .Where(x => x.Id == id)
+        //        .Select(c => new Model()
+        //        {
+        //            Id = c.Id,
+        //            Title = c.Title,
+        //            description = c.description,
+        //            Teacher = c.Teacher,
+        //            price = c.price,
+        //            startDate = c.startDate,
+        //            ImagesPath = c.ImagesPath
+        //        }).Take(count).ToListAsync();
 
-        // .Select(c => new CourseModel()
-        // {
-        //     Title = c.Title,
-        //     description = c.description,
-        //     Teacher = c.Teacher,
-        //     price = c.price,
-        //     startDate = c.startDate,
-        //     ImagesPath = c.ImagesPath
-
-        // })
-        //        .FirstOrDefaultAsync();
         //}
-
-
 
 
 
