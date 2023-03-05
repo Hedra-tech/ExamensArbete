@@ -6,7 +6,7 @@ namespace ExamensArbeteMVC.Models
     {
         [Key]
 
-        public int Id { get; set; }
+        public int? Id { get; set; }
         public string? Title { get; set; }
         public string? description { get; set; }
         public string? Teacher { get; set; }

@@ -17,6 +17,7 @@ namespace ExamensArbeteMVC.RepositoryData
             return await _context.Courses
                 .Select(c => new CourseModel()
                 {
+                    Id = c.Id,
                     Title = c.Title,
                     description = c.description,
                     Teacher = c.Teacher,
