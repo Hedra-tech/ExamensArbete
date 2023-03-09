@@ -1,4 +1,6 @@
-﻿using ExamensArbeteMVC.Models;
+﻿// I detta klass jag skapar två metoder en för Get så att användra kan se formuläret och fylla i den
+// och det andra För POST för att kunna skicka förmuläret till Databasen
+using ExamensArbeteMVC.Models;
 using ExamensArbeteMVC.RepositoryData;
 using Microsoft.AspNetCore.Mvc;
 

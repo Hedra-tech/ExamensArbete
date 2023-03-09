@@ -29,8 +29,8 @@ namespace ExamensArbeteMVC.Models
         [StringLength(1000, MinimumLength = 5)]
         public string? Message { get; set; }
 
-        public DateTime SendAt { get; set; }
+        //public DateTime SendAt { get; set; }
 
-        public DateTime UtcNow { get; internal set; }
+        //public DateTime UtcNow { get; internal set; }
     }
 }
