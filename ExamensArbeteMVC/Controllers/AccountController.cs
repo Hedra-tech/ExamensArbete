@@ -34,22 +34,34 @@ namespace ExamensArbeteMVC.Controllers
             if (ModelState.IsValid)
             {
                 var result = await _accountData.CreateUserAsync(userModel);
-                //if (result.Succeeded)
-                //{
-                //    return RedirectToAction(nameof(SignIn));
-                //}
-                if (!result.Succeeded)
+                if (result.Succeeded)
                 {
-                    foreach (var errorMessage in result.Errors)
-                    {
-                        ModelState.AddModelError("", errorMessage.Description);
-                    }
-                    return View();
+                    TempData["Message"] = "Your account has been created successfully. You can log in now";
+                    return RedirectToAction("LogIn", "Account");
                 }
-                ModelState.Clear();
+                ModelState.AddModelError("", "Invalid input");
             }
-            return View();
+            return View(userModel);
         }
+        //if (ModelState.IsValid)
+        //{
+        //    var result = await _accountData.CreateUserAsync(userModel);
+        //    //if (result.Succeeded)
+        //    //{
+        //    //    return RedirectToAction(nameof(SignIn));
+        //    //}
+        //    if (!result.Succeeded)
+        //    {
+        //        foreach (var errorMessage in result.Errors)
+        //        {
+        //            ModelState.AddModelError("", errorMessage.Description);
+        //        }
+        //        return View();
+        //    }
+        //    ModelState.Clear();
+        //}
+        //return View();
+    //}
         [Route("login")]
         public IActionResult LogIn()
         {
@@ -64,7 +76,7 @@ namespace ExamensArbeteMVC.Controllers
                 var result = await _accountData.PasswordSignInAsync(loginModel);
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("AboutUs", "Home");
+                    return RedirectToAction("Index", "Home");
                 }
                 ModelState.AddModelError("", "Invalid input");
             }
