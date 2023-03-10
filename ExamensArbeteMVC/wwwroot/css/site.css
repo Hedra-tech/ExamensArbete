@@ -220,9 +220,13 @@ html {
             background-color: #044b8a;
             border-color: #044b8a;
         }
+    .original-price {
+        text-decoration: line-through;
+    }
 }
 
- 
+
+
 
 
 

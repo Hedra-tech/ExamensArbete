@@ -43,25 +43,7 @@ namespace ExamensArbeteMVC.Controllers
             }
             return View(userModel);
         }
-        //if (ModelState.IsValid)
-        //{
-        //    var result = await _accountData.CreateUserAsync(userModel);
-        //    //if (result.Succeeded)
-        //    //{
-        //    //    return RedirectToAction(nameof(SignIn));
-        //    //}
-        //    if (!result.Succeeded)
-        //    {
-        //        foreach (var errorMessage in result.Errors)
-        //        {
-        //            ModelState.AddModelError("", errorMessage.Description);
-        //        }
-        //        return View();
-        //    }
-        //    ModelState.Clear();
-        //}
-        //return View();
-    //}
+
         [Route("login")]
         public IActionResult LogIn()
         {

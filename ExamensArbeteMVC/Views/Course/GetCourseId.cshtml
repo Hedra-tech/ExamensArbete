@@ -9,76 +9,13 @@
 
 @model CourseModel
 
-@{
-    Layout = "_Layout";
-}
 <div class="container">
-    <br />
-
-    <div class="row">
-
-        @* column to the left*@
-        <div class="col-md-6">
-
-
-
-            <div class="card mb-6 shadow">
-
-                <img class="card-img-top" src="@Model.ImagesPath " asp-for="Images">
-                <div class="card-body">
-                    <h5 class="card-title">Course: @Model.Title</h5>
-                    @*<p class="card-text">Description: @Model.description</p>*@
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Teacher: @Model.Teacher</li>
-                    <li class="list-group-item">Price: @Model.price</li>
-                   <br />
-                    @* <li class="list-group-item">Start date: @Model.startDate</li>*@
-                   
-                </ul>
-                   
-                   <div class=" container">
-                        <p>If you're interested in registering for the course, please click on the button below to contact us by email. We'll be happy to provide you with more information and guide you through the registration process.</p>
-                        <div class="container" style="text-align: left">
-                            <a asp-controller="Form" asp-action="ContactForm" type="button" class="btn btn-outline-primary btn-lg" value="About us">Contact us</a>
-                        </div>
-                    </div>
-                    <br />
-                   
-               
-
-
-            </div>
-        </div>
-        <br />
-        @* column to the left*@
-        <div class="col-md-6">
-            <div class="card mb-6 shadow">
-                <div class="card-body">
-                    <h5 class="card-title">Course description: </h5>
-                    <p class="card-text"> @Model.description </p>
-                    <h5 class="card-title">This course includes: </h5>
-                </div>
-                <div>
-
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">3 months, 2 times per week</li>
-                        <li class="list-group-item">2 Hours on demand video</li>
-                        <li class="list-group-item">Full lifetime access</li>
-                        <li class="list-group-item">Certificate of completion </li>
-                        <li class="list-group-item">1 Downloadable resource</li>
-                        <li class="list-group-item">Access on mobile and TV </li>
-
-                        <li class="list-group-item">Up to 15 students per class</li>
-                        <li class="list-group-item">Course materials and classes are in English</li>
-                    </ul>
-                </div>
-            </div>
+    <partial name="_CourseInfo" />
         </div>
         <br />
 
         @*  Other courses*@
-
+@*
         <div class="py-5 bg-light">
             <hr />
             <h3> Other Courses</h3>
@@ -93,17 +30,17 @@
                             <div class="card-body">
                                 <h5 class="card-title">@Model.Title</h5>
                                 @* <p class="card-text">@course.description</p>*@
-                            </div>
+                           @* </div>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">Teacher: @Model.Teacher</li>
                                 <li class="list-group-item">Price: @Model.price</li>
                                 <li class="list-group-item">Start date: @Model.startDate</li>
                             </ul>
                             <div class="card-body">
-                                <a href="/Course/GetCourseId/course.Id" class="card-link">Course details</a>
+                                <a href="/Course/GetCourseId/course.Id" class="card-link">Course details</a>*@
                                 @*<a href="@Url.Action("GetCourseId", "Course", new { id = course.Id })" class="card-link">Courses details</a>*@
                                 @*<a class="card-link" asp-area="" asp-controller="Course" asp-action="GetCourseId"asp-route-id="@Model.Id">Read more</a>*@
-                            </div>
+                           @* </div>
 
                         </div>
 
@@ -112,4 +49,4 @@
 
             </div>
         </div>
-    </div>
+    </div>*@

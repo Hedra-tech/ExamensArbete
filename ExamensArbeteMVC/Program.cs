@@ -35,7 +35,7 @@ app.UseStaticFiles();
 using var scope = app.Services.CreateScope();
 var dbContext = scope.ServiceProvider.GetRequiredService<StoreContext>();
 
-dbContext.Database.EnsureDeleted();
+//dbContext.Database.EnsureDeleted();
 dbContext.Database.EnsureCreated();
 
 app.UseRouting();
