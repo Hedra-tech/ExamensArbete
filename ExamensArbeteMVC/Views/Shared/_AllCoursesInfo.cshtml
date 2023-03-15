@@ -1,4 +1,4 @@
-﻿@*@using Microsoft.AspNetCore.Identity
+﻿@using Microsoft.AspNetCore.Identity
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>@ViewData ["Title"] - ExamensArbeteMVC</title>
@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="~/ExamensArbeteMVC.styles.css" asp-append-version="true" />
 
 @inject SignInManager<IdentityUser> _signinManager
-@model CourseModel
+
 
 
 @{
@@ -23,8 +23,10 @@
     </li>
 
 
-
+     <div class="container">
+        <h1 style="color:red">As a member you get 20% DISCOUNT</h1>
     <h4>All IT & Software courses:</h4>
+
     <br />
 
     <div class="row ">
@@ -36,13 +38,13 @@
                     <img class="card-img-top" src="@course.ImagesPath " asp-for="Images">
 
                     <div class="card-body">
-                        <h5 class="card-title">@course.Title</h5>
+                            <h5 class="card-title">@course.Title</h5>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Teacher: @course.Teacher</li>
-                        <li class="list-group-item">Price: <span style="color:red" class="original-price">@Model.price</span> <span style="color:red" class="discounted-price">Discounte 20%</span> </li>
+                            <li class="list-group-item">Teacher: @course.Teacher</li>
+                            <li class="list-group-item">Price: <span style="color:red" class="original-price">@course.price</span> <span style="color:red" class="discounted-price">Discounte 20%</span> </li>
 
-                        <li class="list-group-item">Start date: @course.startDate</li>
+                            <li class="list-group-item">Start date: @course.startDate</li>
                     </ul>
                     <div class="card-body">
                        <a href="@Url.Action("GetCourseId", "Course", new { id = course.Id })" class="card-link">Courses details</a>
@@ -52,10 +54,10 @@
                 </div>
 
             </div>
-        }
+       }
     </div>
                      
-              
+      </div>         
 
 }
 else
@@ -96,4 +98,3 @@ else
 
 }
 
-*@
